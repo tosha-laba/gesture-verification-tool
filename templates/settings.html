@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="/static/css/bulma.min.css">
+</head>
+<body>
+<section class="hero is-fullheight-with-navbar">
+    <div class="hero-head">
+        <nav class="navbar has-background-dark">
+            <div class="container">
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item has-text-white-ter has-background-grey-dark" href="/">
+                            Главная
+                        </a>
+                        <a class="navbar-item has-text-white-ter has-background-link" href="settings">
+                            Настройки
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <form action="/settings" enctype="text/plain" method="get">
+                <div class="field">
+                    <label class="label">Вероятность по горизонтали:</label>
+                    <div class="control">
+                        <input class="input" name="prob_h" value="{{ prob_h }}" type="text" placeholder="...">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Вероятность по вертикали:</label>
+                    <div class="control">
+                        <input class="input" name="prob_v" value="{{ prob_v }}" type="text" placeholder="...">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Вероятность по вертикали для пальцев:</label>
+                    <div class="control">
+                        <input class="input" name="prob_v_f" value="{{ prob_v_f }}" type="text" placeholder="...">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Вероятность по горизонтали (анализ пальцев):</label>
+                    <div class="control">
+                        <input class="input" name="prob_f_h" value="{{ prob_f_h }}" type="text" placeholder="...">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Вероятность по вертикали (анализ пальцев):</label>
+                    <div class="control">
+                        <input class="input" name="prob_f_v" value="{{ prob_f_v }}" type="text" placeholder="...">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link" type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
