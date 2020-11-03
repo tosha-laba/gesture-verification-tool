@@ -82,7 +82,10 @@ def scale_and_crop_fingers(bundle):
                  ['Пальцы       ', 'Эталон'])
 
     w, h = bundle['image_cropped'].size
-    bundle['image_cropped'].crop((0, h / 2, w, h)).save(os.path.join('static/images/', 'image_fingers.png'), 'PNG')
+    if bundle['fingers'] == 'bottom':
+        bundle['image_cropped'].crop((0, h / 2, w, h)).save(os.path.join('static/images/', 'image_fingers.png'), 'PNG')
+    else:
+        bundle['image_cropped'].crop((0, 0, w, h / 2)).save(os.path.join('static/images/', 'image_fingers.png'), 'PNG')
 
 
 def draw_and_save_plots(bundle):

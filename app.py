@@ -283,7 +283,7 @@ def process():
                                 fbha_time_w)
                            ],
                            fprob_table=list(map(lambda v: v[1],
-                                                filter(lambda i: prob_table[i[0]] == 'Не получен чёткий ответ',
+                                                filter(lambda i: prob_table[i[0]][2] == 'Не получен чёткий ответ',
                                                        enumerate([
                                                            ('Корреляция', fcor_prob * 100,
                                                             make_decision(fcor_prob)),
